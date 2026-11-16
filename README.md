@@ -30,7 +30,7 @@ The preprocessing pipeline includes:
 - **Exposure duration:** Estimating the fraction and number of days spent above half of peak irradiation.
 - **Exposure classification:** Categorizing irradiation patterns as brief bursts or prolonged exposure using a 25% orbital-duration threshold.
 
-The resulting dataset retains 6,393 non-controversial planetary records and preserves the original NASA attributes alongside derived metrics. Visualization-specific filtering, ranking, and binning are performed separately in Observable.
+ Visualization-specific filtering, ranking, and binning are performed separately in Observable.
 
 ## Visualizations
 
