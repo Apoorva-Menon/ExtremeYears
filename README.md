@@ -73,7 +73,7 @@ ExtremeYears/
 
 - **GitHub Repository:** [ExtremeYears](https://github.com/Apoorva-Menon/ExtremeYears)
 - **Data Preprocessing Notebook:** [Google Colab](https://colab.research.google.com/drive/1qrz063Ggl2ubwh1NG1slJKJ1rrTny_qo?usp=sharing)
-- **Observable Notebooks:** Links to be added
+- **Observable Notebooks:** [Observable](https://observablehq.com/d/81696358de92a630)
 
 ## Running the Visualizations
 
