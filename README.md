@@ -51,6 +51,7 @@ ExtremeYears/
 │   ├── raw/
 │   └── processed/
 ├── preprocessing/
+├── dashboard/
 └── milestones/
 
 ```
@@ -58,6 +59,7 @@ ExtremeYears/
 | Directory | Description |
 |---|---|
 | `data/` | Original NASA dataset snapshot and processed datasets |
+| `dashboard/` | Observable Framework dashboard |
 | `preprocessing/` | Google Colab notebooks for data cleaning, transformation, and feature derivation |
 | `milestones/` | Project milestone reports and deliverables |
 
@@ -65,6 +67,7 @@ ExtremeYears/
 
 - **D3.js** — Data visualization and interactive chart development
 - **Observable** — Development and execution of D3 visualizations
+- **Observable Framework** — Dashboard showing the different visualizations
 - **Python / Pandas** — Data preprocessing and analysis
 - **Google Colab** — Collaborative preprocessing environment
 - **NASA Exoplanet Archive** — Exoplanetary data source
@@ -84,6 +87,45 @@ The D3 visualizations are developed in Observable notebooks.
 3. Run the notebook cells to render and interact with the visualizations.
 
 The preprocessing workflow is available through the linked Google Colab notebook.
+
+## Running the Dashboard
+
+The dashboard is an [Observable Framework](https://observablehq.com/framework/) project in `dashboard/`.
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) 18 or newer (`node -v`)
+- Python 3 (`python3 --version`). It is used by a data loader and needs only the standard library.
+
+### Setup and local preview
+
+```bash
+git clone https://github.com/Apoorva-Menon/ExtremeYears.git
+cd ExtremeYears/dashboard
+npm ci          # install the exact dependency versions from package-lock.json
+npm run dev     # start the preview server at http://127.0.0.1:3000
+```
+
+The preview server reloads the page whenever a file in `dashboard/src/` is saved. Stop it with `Ctrl+C`.
+
+### Dashboard structure
+
+```text
+dashboard/
+├── observablehq.config.js         # site title and sidebar pages
+├── package.json
+└── src/
+    ├── index.md                   # overview page
+    ├── q1-q2.md                   # Q1–Q2: year lengths & irradiation contrast
+    ├── q3-q4.md                   # Q3–Q4: eccentricity, bursts & exposure
+    ├── q5-q6.md                   # Q5–Q6: characteristics & the wildest years
+    └── data/
+        ├── planets_story.csv.py       # data loader: serves data/processed/planets_story.csv
+        └── planets_processed.csv.py   # data loader: keeps only the needed columns of planets_processed.csv
+```
+
+The dashboard reads its data from `data/processed/` through **data loaders**, so the CSVs are never copied into the dashboard folder. Framework runs each loader the first time a page requests its output, then caches the result in `src/.observablehq/cache/`.
+
 
 ## Team
 
