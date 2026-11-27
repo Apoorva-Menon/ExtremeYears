@@ -117,14 +117,26 @@ dashboard/
 └── src/
     ├── index.md                   # overview page
     ├── q1-q2.md                   # Q1–Q2: year lengths & irradiation contrast
-    ├── q3-q4.md                   # Q3–Q4: eccentricity, bursts & exposure
+    ├── q3.md                      # Q3: eccentricity & starlight
+    ├── q4.md                      # Q4: bursts or prolonged exposure
     ├── q5-q6.md                   # Q5–Q6: characteristics & the wildest years
+    ├── components/
+    │   └── q3-q4.js               # Q3/Q4 chart settings and D3 drawing functions
     └── data/
         ├── planets_story.csv.py       # data loader: serves data/processed/planets_story.csv
         └── planets_processed.csv.py   # data loader: keeps only the needed columns of planets_processed.csv
 ```
 
 The dashboard reads its data from `data/processed/` through **data loaders**, so the CSVs are never copied into the dashboard folder. Framework runs each loader the first time a page requests its output, then caches the result in `src/.observablehq/cache/`.
+
+## Milestones
+
+Detailed domain questions, visualization designs, preprocessing decisions and evaluation are documented in the project milestone reports.
+
+## AI Policy
+
+AI tools were used in parts of this project. For details of how they were used in each milestone, please check [AI_POLICY.md](AI_POLICY.md).
+
 
 
 ## Team
@@ -134,7 +146,3 @@ The dashboard reads its data from `data/processed/` through **data loaders**, so
 - Apoorva Menon
 - Anna Susan Cherian
 - Mitran Ramesh Kumar
-
-**Course:** Information Visualization
-
-Detailed domain questions, visualization designs, preprocessing decisions and evaluation are documented in the project milestone reports.
